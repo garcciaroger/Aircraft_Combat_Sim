@@ -1,21 +1,19 @@
 package Weapons.Missile;
-import Weapons.Weapon;
 
 public class AIM120 extends Missile {
-    // AIM-120 specific attributes
-    private String radarMode; // e.g., Active, Semi-Active
+    // AIM-120 specific attribute
+    private final String radarMode; // Always set to "Active" for AMRAAM
 
-    // Constructor
-    public AIM120(String radarMode) {
-        super("AIM-120 AMRAAM", 335, 100, "Radar", 4.0); // Name, weight, range, guidance system, speed
-        this.radarMode = radarMode;
+    // No-argument constructor: hardcoded stats
+    public AIM120() {
+        super("AIM-120 AMRAAM", 335, 100, "Radar", 4.0); // Name, weight, range, guidance, speed
+        this.radarMode = "Active"; // Hardcoded value
     }
 
-    // Getter and Setter for radarMode
+    // Getter for radarMode
     public String getRadarMode() { return radarMode; }
-    public void setRadarMode(String radarMode) { this.radarMode = radarMode; }
 
-    // AIM-120 specific behavior
+    // Override fire method
     @Override
     public void fire(String target) {
         if (isArmed()) {
@@ -23,5 +21,15 @@ public class AIM120 extends Missile {
         } else {
             System.out.println("AIM-120 AMRAAM is not armed.");
         }
+    }
+
+    // Optional: status display
+    public void displayInfo() {
+        System.out.println("Missile: " + getName());
+        System.out.println("Weight: " + getWeight() + " kg");
+        System.out.println("Range: " + getRange() + " km");
+        System.out.println("Guidance: " + getGuidanceSystem());
+        System.out.println("Speed: Mach " + getSpeed());
+        System.out.println("Radar Mode: " + radarMode);
     }
 }

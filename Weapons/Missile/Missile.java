@@ -22,4 +22,11 @@ public class Missile extends Weapon {
             System.out.println("Missile " + getName() + " is not armed.");
         }
     }
+    public void displayInfo() {
+    System.out.println("Missile: " + getName());
+    System.out.println("Weight: " + getWeight() + " kg");
+    System.out.println("Range: " + getRange() + " km");
+    System.out.println("Guidance: " + guidanceSystem);
+    System.out.println("Speed: Mach " + speed);
+    }
 }

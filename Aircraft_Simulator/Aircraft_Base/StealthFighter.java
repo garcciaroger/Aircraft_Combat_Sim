@@ -1,32 +1,29 @@
-package F35_Class.Aircraft_Characteristics;
+package Aircraft_Simulator.Aircraft_Base;
 
-public class StealthFighter extends FighterJet {
-    // Stealth-specific attributes
-    private double radarCrossSection; // in square meters (smaller is better)
+public class StealthFighter extends Fighter {
+    private double radarCrossSection; // in square meters
     private boolean stealthModeActive;
-    // Constructor
-    public StealthFighter(String manufacturer, String model, int fuelCapacity, 
-                         int payloadCapacity, int altitude, double maxSpeed, 
-                         int maxG, int maxWeapons, double radarCrossSection,
-                         int maxDefenseSystems) {
-        super(manufacturer, model, fuelCapacity, payloadCapacity, altitude, 
-              maxSpeed, maxG, maxWeapons);
+
+    public StealthFighter(String manufacturer, String model, int fuelCapacity,
+                         int payloadCapacity, int maxAltitude, double maxSpeed,
+                         int maxG, int maxWeapons, double radarCrossSection, double combatRadius) {
+        super(manufacturer, model, fuelCapacity, maxAltitude, payloadCapacity, maxWeapons, maxSpeed, maxG, combatRadius);
         this.radarCrossSection = radarCrossSection;
         this.stealthModeActive = false;
     }
-    // Getters and setters
+
     public double getRadarCrossSection() {
         return stealthModeActive ? radarCrossSection * 0.1 : radarCrossSection;
     }
-    
+
     public void setRadarCrossSection(double radarCrossSection) {
         this.radarCrossSection = radarCrossSection;
     }
-    
+
     public boolean isStealthModeActive() {
         return stealthModeActive;
     }
-    // Stealth-specific methods
+
     public void activateStealthMode() {
         if (!stealthModeActive) {
             stealthModeActive = true;
@@ -36,6 +33,7 @@ public class StealthFighter extends FighterJet {
             System.out.println("Stealth mode already active");
         }
     }
+
     public void deactivateStealthMode() {
         if (stealthModeActive) {
             stealthModeActive = false;
@@ -45,5 +43,4 @@ public class StealthFighter extends FighterJet {
             System.out.println("Stealth mode already inactive");
         }
     }
-   
 }

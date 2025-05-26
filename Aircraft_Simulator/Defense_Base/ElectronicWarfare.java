@@ -1,7 +1,6 @@
-package F35_Class.Defense_System;
-import F35_Class.DefenseMechanism;
+package Aircraft_Simulator.Defense_Base;
 
-public class ElectronicWarefare extends DefenseMechanism {
+public class ElectronicWarfare extends Defense {
     // Electronic Warfare Attributes
     private double frequencyMin; // Frequency in GHz
     private double frequencyMax; // Frequency in GHz
@@ -9,8 +8,8 @@ public class ElectronicWarefare extends DefenseMechanism {
     private String mode; // Mode of operation (e.g., jamming, deception)
 
     // Constructor
-    public ElectronicWarefare(String type, String model, int range, String lockType, 
-                              double frequencyMin, double frequencyMax, String mode) {
+    public ElectronicWarfare(String type, String model, int range, String lockType, 
+                             double frequencyMin, double frequencyMax, String mode) {
         super(type, model, range, lockType); // Call the parent constructor
         this.frequencyMin = frequencyMin;
         this.frequencyMax = frequencyMax;
@@ -43,6 +42,7 @@ public class ElectronicWarefare extends DefenseMechanism {
         System.out.println("Deactivating Electronic Warfare system...");
     }
 
+    @Override
     public void engage() {
         System.out.println("Engaging Electronic Warfare system in " + mode + " mode...");
     }

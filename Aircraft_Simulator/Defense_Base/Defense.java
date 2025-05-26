@@ -1,13 +1,13 @@
-package F35_Class;
+package Aircraft_Simulator.Defense_Base;
 
-public class DefenseMechanism {
+public class Defense {
     // Defense Mechanism Attributes
     private String type; // Type of defense mechanism (e.g., stealth, electronic warfare)
     private String model; // Model of the defense mechanism
     private int range; // Range of the defense mechanism (in miles)
     private String LockType; // Type of lock (e.g., radar, infrared)
     //Constructor
-    public DefenseMechanism(String type, String model, int range, String LockType) {
+    public Defense(String type, String model, int range, String LockType) {
         this.type = type;
         this.model = model;
         this.range = range;
