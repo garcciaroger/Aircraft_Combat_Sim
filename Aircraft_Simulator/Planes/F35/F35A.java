@@ -1,5 +1,5 @@
 package Aircraft_Simulator.Planes.F35;
-import Aircraft_Simulator.Aircraft_Base.StealthFighter;
+import Aircraft_Simulator.Aircraft.StealthFighter;
 
 public class F35A extends StealthFighter {
     public F35A() {

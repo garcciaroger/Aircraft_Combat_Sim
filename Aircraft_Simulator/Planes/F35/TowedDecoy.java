@@ -1,5 +1,5 @@
 package Aircraft_Simulator.Planes.F35;
-import Aircraft_Simulator.Defense_Base.Defense;
+import Aircraft_Simulator.Defense.Defense;
 
 public class TowedDecoy extends Defense {
     // Towed Decoy Attributes

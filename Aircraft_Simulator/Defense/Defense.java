@@ -1,4 +1,4 @@
-package Aircraft_Simulator.Defense_Base;
+package Aircraft_Simulator.Defense;
 
 public class Defense {
     // Defense Mechanism Attributes

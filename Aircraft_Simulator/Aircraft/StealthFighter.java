@@ -1,4 +1,4 @@
-package Aircraft_Simulator.Aircraft_Base;
+package Aircraft_Simulator.Aircraft;
 
 public class StealthFighter extends Fighter {
     private double radarCrossSection; // in square meters

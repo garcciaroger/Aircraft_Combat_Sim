@@ -1,6 +1,6 @@
-package Aircraft_Simulator.Defense_Base;
+package Aircraft_Simulator.Defense;
 
-public class ChaffFlairs {
+public class ChaffFlairs extends Defense{
     //Chaff and flares attributes
     private int chaffCount; // Number of chaff deployed
     private int flareCount; // Number of flares deployed
@@ -9,11 +9,12 @@ public class ChaffFlairs {
 
     // Constructor
     public ChaffFlairs(int chaffCount, int flareCount) {
-        this.chaffCount = chaffCount;
-        this.flareCount = flareCount;
-        this.chaffDeployed = false;
-        this.flareDeployed = false;
-    }
+    super("Chaff/Flares", "Generic", 1, "infrared"); // <-- or use better values for your sim
+    this.chaffCount = chaffCount;
+    this.flareCount = flareCount;
+    this.chaffDeployed = false;
+    this.flareDeployed = false;
+}
     // Getters
     public int getChaffCount() {
         return chaffCount;
@@ -56,5 +57,12 @@ public class ChaffFlairs {
         } else {
             System.out.println("No flares left to deploy!");
         }
+    }
+    public void resetChaff() { chaffDeployed = false; }
+    public void resetFlare() { flareDeployed = false; }
+
+    @Override
+    public String toString() {
+        return "Chaff: " + chaffCount + ", Flares: " + flareCount;
     }
 }
